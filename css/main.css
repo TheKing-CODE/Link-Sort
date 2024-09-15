@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #044040;
+    color: blanchedalmond;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+}
+
+main {
+    display: flex;
+    flex-direction: column;    
+    max-width: 1040px;
+    width: 1040px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    border-style: solid;
+    position: relative;
+    
+
+    font-size: 30px;
+    text-align: center;
+
+    height: 60%;
+    padding: 20px 20px;
+
+    background-color: #8C1F28;
+    border-radius: 10px;
+}
+
+main #section-url{
+    display: grid;
+    grid-template-columns: auto;
+    margin-bottom: 15px;
+}
+
+main input[type="text"]{
+    padding: 10px;
+    border-style: none;
+    border-radius: 15px;
+    margin-top: 4px;
+    margin-right: 4px;
+    padding-left: 25px;
+}
+
+main input[type="submit"]{
+    border-style: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+main .modal-link-criado .modal{
+    background-color: #8C1F28;
+    color: black;
+}
