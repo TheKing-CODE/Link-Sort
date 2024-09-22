@@ -7,7 +7,9 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src='script/main.js'></script>
+    <script type="module" src='script/main.js'></script>
+    <script src='script/notify.js'></script>
+    <script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
@@ -16,25 +18,28 @@
         <section>                     
             <h1 style="margin-bottom: 15px;">Link Sort</h1>
             
-            <form class="formulario" id="formulario" action="">                
+            <form class="formulario" id="formulario">                
                 <section class="section-url-original" id="section-url">
                     <label for="url-original">Digite url que deseja encurtar</label>
-                    <input name="url-original" id="url-original" type="text" placeholder="exemplo.com/testando/testar/testado"/>
+                    <input class="url-original" name="url-original" id="url-original" type="text" placeholder="exemplo.com/testando/testar/testado" required />
                 </section>
                 <section class="section-url-personalizada" id="section-url">
                     <label for="url-personalizada">Digite sua nova url</label>
-                    <label style="font-size: 15px;">MeuSite.com/</label><input name="url-personalidade" type="text" id="url-personalidade" placeholder="Nova url"/><br/>                    
+                    <label style="font-size: 15px;">MeuSite.com/</label><input class="url-personalizada" name="url-personalidade" type="text" id="url-personalidade" placeholder="Nova url" required /><br/>                    
                 </section>                     
                 </p>           
                 <input type="submit" class="button-enviar" value="Criar novo link">
                 <input type="submit" name="limpar-form" class="limpar-form" value="Limpar"/>
             </form>
         </section>
+        <p style="display: none;"><a class="link-modal" href="#ex1" rel="modal:open">Open Modal</a></p>
         
         <section class="modal-link-criado" id="modal-link-criado">
             <div id="ex1" class="modal" style="color: black; text-align: center;">
+            	<i class="fa-solid fa-check" style="color: #17b54e; font-size: 44px;"></i>
                 <h1>!!Parabéns!!</h1><br/>
                 <h2>Você criou uma nova url</h2><br/>
+                <h3>Link para compartilha sua URL</h3><br/>
                 <a class="link-nova-url" id="link-nova-url" href="google.com" style="border-style: solid; border-width: 2px; border-radius: 10px;  padding: 5px 5px;">exemplo.com/novaurl</a>
             </div>
         </section>
