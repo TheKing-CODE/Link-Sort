@@ -11,22 +11,25 @@
 
 	if ($data) {
 		$tarefa = $data['tarefa'];
-		$urlNova = $data['urlNova'];
-	    $urlOriginal = $data['urlOriginal'];
+		$urlNova = '';
+	    $urlOriginal = '';
        
         if($tarefa == 'criar'){
+			$urlNova = $data['urlNova'];
+	    	$urlOriginal = $data['urlOriginal'];
         	$result = criarUrl($urlNova, $urlOriginal);
         	echo $result;
-        }
-
+        }elseif($tarefa == 'consultar'){
+			$urlNova = $data['urlNova'];
+			$result = consultarUrl($urlNova);
+			echo $result; 
+		};
 	} else {
 	    $response = [
 	        'status' => 'error',
 	        'message' => 'Dados não recebidos.',
 	    ];
 	}	
-
-
 	
 	function criarUrl($urlNova, $urlOriginal){
 		global $bancoDB;
@@ -37,9 +40,11 @@
 		}
 	}
 	
-
 	function consultarUrl($urlNova){
-		return $bancoDB->consultarUrl($urlNova);
+		global $bancoDB;
+
+		//echo $urlNova;
+		echo $bancoDB->consultarUrl($urlNova);
 	}
 
 ?>

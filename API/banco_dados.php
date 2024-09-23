@@ -46,7 +46,7 @@ class BancoDados {
     }
 
 	public function consultarUrl($urlNova) {
-	    $sql = "SELECT * FROM links WHERE Url_nova = :url";
+	    $sql = "SELECT Url_original FROM links WHERE Url_nova = :url";
 	    $stmt = $this->pdo->prepare($sql);
 	    $stmt->execute(['url' => $urlNova]);
 
@@ -55,7 +55,7 @@ class BancoDados {
 	    if ($row && isset($row['Url_original'])) {
 	        echo $row['Url_original'];
 	    } else {
-	        echo 'false';
+	        echo 'Link não encontrado';
 	    }
 	}
 
